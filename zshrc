@@ -77,6 +77,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 alias tmux='tmux -u'
 alias v='vim'
-alias hc='source ~/Settings/Scripts/createHaskell.sh'
-alias ho='sh ~/Settings/Scripts/HaskellVimTmux.sh'
-alias ytd='ruby ~/Settings/Scripts/download-youtube.rb'
+alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
+alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
+alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
