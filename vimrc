@@ -18,6 +18,7 @@ Plugin 'https://github.com/bling/vim-airline'
 Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,7 +59,7 @@ let g:ghc = "/usr/local/bin/ghc"
 "Airline
 set t_Co=8
 set laststatus=2
-let g:airline_theme = 'bubblegum' 
+let g:airline_theme = 'bubblegum'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -101,7 +102,28 @@ let g:tagbar_type_objc = {
         \ 'enumeration'    : 'e'
     \ }
 \ }
-" Keybindings 
+
+"Clang Complete and Super Tab
+
+let g:clang_use_library = 1
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+
+"if isdirectory(s:clang_library_path)
+"    let g:clang_library_path=s:clang_library_path
+"endif
+
+ let g:SuperTabDefaultCompletionType = "context"
+
+ " Disable auto popup, use <Tab> to autocomplete
+ let g:clang_complete_auto = 1
+ " Show clang errors in the quickfix window
+ let g:clang_complete_copen = 1
+
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'clang_complete'
+
+
+" Keybindings
 let mapleader = ","
 
 nnoremap <Leader>l :Lexplore<CR>
@@ -109,4 +131,7 @@ nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 
 set pastetoggle=<leader>v
+
+
+autocmd BufWritePre * :%s/\s\+$//e
 
