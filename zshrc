@@ -79,4 +79,13 @@ alias tmux='tmux -u'
 alias v='vim'
 alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
 alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
+
 alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
+
+alias elm='elm --make --set-runtime=./js/elm-runtime.js'
+
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gu='git pull'
+alias gs='git status'
