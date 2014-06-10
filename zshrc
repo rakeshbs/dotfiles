@@ -89,3 +89,5 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gu='git pull'
 alias gs='git status'
+alias q='exit'
+
