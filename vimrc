@@ -107,7 +107,7 @@ let g:tagbar_type_objc = {
 
 
 " Keybindings
-let mapleader = ","
+let mapleader = " "
 
 nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>p :CtrlP<CR>
