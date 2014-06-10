@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set relativenumber
+" set relativenumber
 set number
 set timeout
 set timeoutlen=500
@@ -19,6 +19,8 @@ Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'ervandew/supertab'
+Plugin 'https://github.com/Valloric/YouCompleteMe'
+Plugin 'lambdatoast/elm.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -103,25 +105,6 @@ let g:tagbar_type_objc = {
     \ }
 \ }
 
-"Clang Complete and Super Tab
-
-let g:clang_use_library = 1
-let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
-
-"if isdirectory(s:clang_library_path)
-"    let g:clang_library_path=s:clang_library_path
-"endif
-
- let g:SuperTabDefaultCompletionType = "context"
-
- " Disable auto popup, use <Tab> to autocomplete
- let g:clang_complete_auto = 1
- " Show clang errors in the quickfix window
- let g:clang_complete_copen = 1
-
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'clang_complete'
-
 
 " Keybindings
 let mapleader = ","
@@ -134,4 +117,36 @@ set pastetoggle=<leader>v
 
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+" i could'nt find any get_number_of_visible_lines function, so i made my own.
+function GetNumberOfVisibleLines()
+  let cur_line = line(".")
+  let cur_col = virtcol(".")
+  normal H
+  let top_line = line(".")
+  normal L
+  let bot_line = line(".")
+  execute "normal " . cur_line . "G"
+  execute "normal " . cur_col . "|"
+  return bot_line - top_line
+endfunc
+
+" noremap <PageUp> 39<C-U>:set scroll=0<CR>
+function! MyPageUp()
+  let visible_lines = GetNumberOfVisibleLines()
+  execute "normal " . visible_lines . "\<C-U>:set scroll=0\r"
+endfunction
+
+" noremap <PageDown> 39<C-D>:set scroll=0<CR>
+function! MyPageDown()
+  let visible_lines = GetNumberOfVisibleLines()
+  execute "normal " . visible_lines . "\<C-D>:set scroll=0\r"
+endfunction
+
+" BorlandPascal pageup/down behaviour!
+" todo: when hitting top/bottom of file, then restore Y to lastY
+noremap <PageUp> :call MyPageUp()<CR>
+noremap <PageDown> :call MyPageDown()<CR>
+
+
 
