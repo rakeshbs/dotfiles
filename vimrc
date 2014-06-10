@@ -5,6 +5,10 @@ set number
 set timeout
 set timeoutlen=500
 
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
