@@ -1,9 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set relativenumber
 set number
 set timeout
-set timeoutlen=500
+set timeoutlen=1000
 
 set shiftwidth=4
 set tabstop=4
@@ -25,7 +24,7 @@ Plugin 'eagletmt/neco-ghc'
 Plugin 'ervandew/supertab'
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 Plugin 'lambdatoast/elm.vim'
-
+Plugin 'toyamarinyon/vim-swift'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -116,9 +115,18 @@ let mapleader = " "
 nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>n :call NumberToggle()<CR>
 
 set pastetoggle=<f5>
 
 
 autocmd BufWritePre * :%s/\s\+$//e
+ augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+augroup END
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
