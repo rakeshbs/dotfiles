@@ -4,6 +4,9 @@ set number
 set timeout
 set timeoutlen=1000
 
+set rnu
+set nu
+
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -127,6 +130,8 @@ autocmd BufWritePre * :%s/\s\+$//e
       au InsertLeave * set timeoutlen=1000
 augroup END
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+autocmd InsertEnter * :set nu
+autocmd InsertEnter * :set nornu
+autocmd InsertLeave * :set rnu
+
 
