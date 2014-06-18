@@ -90,4 +90,5 @@ alias gp='git push'
 alias gu='git pull'
 alias gs='git status'
 alias q='exit'
+alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
 

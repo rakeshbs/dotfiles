@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble'
-let g:netrw_dirhist_2='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble/2DFramework'
-let g:netrw_dirhist_3='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble/2DFramework/Animation'
-let g:netrw_dirhist_4='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble'
-let g:netrw_dirhist_5='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble/2DFramework'
-let g:netrw_dirhist_6='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble/2DFramework/OpenGL Support'
-let g:netrw_dirhist_7='/Users/rakesh/Desktop/iPhoneProjects/Dabble/Dabble'
-let g:netrw_dirhist_8='/Users/rakesh/Settings'
-let g:netrw_dirhist_9='/Users/rakesh/dotfiles'
+let g:netrw_dirhist_cnt =0
