@@ -28,6 +28,8 @@ Plugin 'ervandew/supertab'
 Plugin 'https://github.com/Valloric/YouCompleteMe'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'toyamarinyon/vim-swift'
+Plugin 'vim-scripts/CmdlineComplete'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
