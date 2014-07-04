@@ -147,3 +147,7 @@ map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
 set nostartofline
+
+highlight TabLineFill ctermfg=233 ctermbg=233
+highlight TabLine ctermfg=244 ctermbg=233
+highlight TabLineSel ctermfg=White ctermbg=233
