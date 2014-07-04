@@ -121,6 +121,7 @@ nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :call NumberToggle()<CR>
+nnoremap <Leader>s :w<CR>
 
 set pastetoggle=<f5>
 
@@ -136,4 +137,13 @@ autocmd InsertEnter * :set nu
 autocmd InsertEnter * :set nornu
 autocmd InsertLeave * :set rnu
 
+nnoremap <Leader><Left> :tabprevious<CR>
+nnoremap <Leader><Right> :tabnext<CR>
+nnoremap <Leader><Up> :tabnew<CR>
+nnoremap <Leader><Down> :tabclose<CR>
 
+map <PageUp> <C-U>
+map <PageDown> <C-D>
+imap <PageUp> <C-O><C-U>
+imap <PageDown> <C-O><C-D>
+set nostartofline

@@ -51,6 +51,7 @@ alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDe
 alias serve='python -m SimpleHTTPServer 8000'
 alias ta='tmux attach-session -t'
 alias tl='tmux list-session'
+alias dd='cd ~/Desktop'
 source ~/.fzf.zsh
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
