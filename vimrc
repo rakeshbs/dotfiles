@@ -11,6 +11,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
+set rtp+=~/CommandLineTools/.fzf
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -21,7 +23,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/syntastic'
 Plugin 'https://github.com/bling/vim-airline'
-Plugin 'https://github.com/kien/ctrlp.vim'
 Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'ervandew/supertab'
@@ -30,6 +31,7 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'toyamarinyon/vim-swift'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'tpope/vim-fugitive.git'
+Plugin 'vim-scripts/EasyGrep'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -119,10 +121,10 @@ let g:tagbar_type_objc = {
 let mapleader = " "
 
 nnoremap <Leader>l :Lexplore<CR>
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
-nnoremap <Leader>n :call NumberToggle()<CR>
 nnoremap <Leader>s :w<CR>
+nnoremap <Leader>q :ccl<CR>
 
 set pastetoggle=<f5>
 
@@ -152,3 +154,15 @@ set nostartofline
 highlight TabLineFill ctermfg=233 ctermbg=233
 highlight TabLine ctermfg=244 ctermbg=233
 highlight TabLineSel ctermfg=White ctermbg=233
+
+" EasyGrep
+let g:EasyGrepFileAssociationsInExplorer = 1
+let g:EasyGrepFileAssociations = $HOME+ '/.vim/EasyGrepFileAssociations'
+let g:EasyGrepSearchCurrentBufferDir = 0
+let g:EasyGrepFileAssociationsInExplorer = 1
+let g:EasyGrepRecursive = 1
+let g:EasyGrepEveryMatch = 1
+let g:EasyGrepMode = 2
+
+"Automatic Paste Mode
+inoremap <C-v> <F5><C-r>+<F5>
