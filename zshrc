@@ -46,11 +46,12 @@ alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
 
 alias ga='git add'
-alias gc='git commit -m'
+alias gc='git commit .'
 alias gp='git push'
 alias gu='git pull'
 alias gs='git status'
 alias q='exit'
+
 alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
 alias serve='python -m SimpleHTTPServer 8000'
 alias ta='tmux attach-session -t'
