@@ -3,10 +3,10 @@ filetype off                  " required
 set number
 set timeout
 set timeoutlen=1000
-
+set incsearch
 set rnu
 set nu
-
+set hidden  " For LustyExplorer
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -32,6 +32,7 @@ Plugin 'toyamarinyon/vim-swift'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
+Plugin 'vim-scripts/LustyExplorer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -123,11 +124,14 @@ let mapleader = " "
 nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
 
 set pastetoggle=<f5>
 
+" Hightlight Search toggle
+let hlstate=0
+nnoremap <f4> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
 
 autocmd BufWritePre * :%s/\s\+$//e
  augroup FastEscape
@@ -140,10 +144,11 @@ autocmd InsertEnter * :set nu
 autocmd InsertEnter * :set nornu
 autocmd InsertLeave * :set rnu
 
-nnoremap <Leader><Left> :tabprevious<CR>
-nnoremap <Leader><Right> :tabnext<CR>
-nnoremap <Leader><Up> :tabnew<CR>
-nnoremap <Leader><Down> :tabclose<CR>
+nnoremap <Leader><Left> :bp<CR>
+nnoremap <Leader><Right> :bn<CR>
+nnoremap <Leader><Up> :LustyBufferExplore<CR>
+nnoremap <Leader><Down> :bd<CR>
+
 
 map <PageUp> <C-U>
 map <PageDown> <C-D>
@@ -154,6 +159,9 @@ set nostartofline
 highlight TabLineFill ctermfg=233 ctermbg=233
 highlight TabLine ctermfg=244 ctermbg=233
 highlight TabLineSel ctermfg=White ctermbg=233
+
+"Search and replace vim
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " EasyGrep
 let g:EasyGrepFileAssociationsInExplorer = 1
