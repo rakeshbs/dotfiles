@@ -161,7 +161,7 @@ highlight TabLine ctermfg=244 ctermbg=233
 highlight TabLineSel ctermfg=White ctermbg=233
 
 "Search and replace vim
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " EasyGrep
 let g:EasyGrepFileAssociationsInExplorer = 1
