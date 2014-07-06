@@ -32,6 +32,10 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 #if [ "$TMUX" = "" ]; then tmux; fi
 
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
+
 alias tmux='tmux -u'
 alias v='vim'
 alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
