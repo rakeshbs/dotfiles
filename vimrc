@@ -124,7 +124,7 @@ nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>s :w<CR>
-nnoremap <Leader>q :ccl<CR>
+nnoremap <Leader>vq :ccl<CR>
 
 set pastetoggle=<f5>
 
