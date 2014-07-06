@@ -58,7 +58,6 @@ alias ta='tmux attach-session -t'
 alias tl='tmux list-session'
 alias dd='cd ~/Desktop'
 
-
 source ~/.fzf.zsh
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
