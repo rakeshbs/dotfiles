@@ -32,7 +32,7 @@ Plugin 'toyamarinyon/vim-swift'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
-Plugin 'vim-scripts/LustyExplorer'
+Plugin 'wincent/Command-T'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -122,10 +122,12 @@ let g:tagbar_type_objc = {
 let mapleader = " "
 
 nnoremap <Leader>l :Lexplore<CR>
-nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
+nnoremap <Leader>p :CommandT<CR>
+nnoremap <Leader>b :CommandTBuffer<CR>
+
 
 set pastetoggle=<f5>
 
@@ -146,7 +148,6 @@ autocmd InsertLeave * :set rnu
 
 nnoremap <Leader><Left> :bp<CR>
 nnoremap <Leader><Right> :bn<CR>
-nnoremap <Leader><Up> :LustyBufferExplore<CR>
 nnoremap <Leader><Down> :bd<CR>
 
 
@@ -174,3 +175,7 @@ let g:EasyGrepMode = 2
 
 "Automatic Paste Mode
 inoremap <C-v> <F5><C-r>+<F5>
+
+"CommandT
+let g:CommandTCancelMap='<ESC>'
+let g:CommandTMaxHeight=20
