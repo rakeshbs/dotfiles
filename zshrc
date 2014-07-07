@@ -57,6 +57,7 @@ alias server='python -m SimpleHTTPServer 8000'
 alias ta='tmux attach-session -t'
 alias tl='tmux list-session'
 alias dd='cd ~/Desktop'
+alias df='cd ~/dotfiles'
 
 source ~/.fzf.zsh
 
