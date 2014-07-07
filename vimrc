@@ -33,21 +33,11 @@ Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'wincent/Command-T'
+Plugin 'vim-scripts/YankRing.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -127,6 +117,10 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
 nnoremap <Leader>p :CommandT<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
+nnoremap <Leader><Left> :bp<CR>
+nnoremap <Leader><Right> :bn<CR>
+nnoremap <Leader><Down> :bd<CR>
+nnoremap <Leader>y :YRShow<CR>
 
 
 set pastetoggle=<f5>
@@ -135,8 +129,10 @@ set pastetoggle=<f5>
 let hlstate=0
 nnoremap <f4> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
 
+" Remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
- augroup FastEscape
+
+augroup FastEscape
       autocmd!
       au InsertEnter * set timeoutlen=0
       au InsertLeave * set timeoutlen=1000
@@ -145,10 +141,6 @@ augroup END
 autocmd InsertEnter * :set nu
 autocmd InsertEnter * :set nornu
 autocmd InsertLeave * :set rnu
-
-nnoremap <Leader><Left> :bp<CR>
-nnoremap <Leader><Right> :bn<CR>
-nnoremap <Leader><Down> :bd<CR>
 
 
 map <PageUp> <C-U>
@@ -177,5 +169,7 @@ let g:EasyGrepMode = 2
 inoremap <C-v> <F5><C-r>+<F5>
 
 "CommandT
-let g:CommandTCancelMap='<ESC>'
+let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 let g:CommandTMaxHeight=20
