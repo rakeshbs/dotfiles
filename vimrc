@@ -11,8 +11,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
-set rtp+=~/CommandLineTools/.fzf
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -70,8 +68,8 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
 " Tagbar settings
-let g:tagbar_autofocus=1
-let g:tagbar_autoclose=1
+" let g:tagbar_autofocus=1
+" let g:tagbar_autoclose=1
 " add a definition for Objective-C to tagbar
 let g:tagbar_type_objc = {
     \ 'ctagstype' : 'ObjectiveC',
@@ -173,3 +171,34 @@ let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
 let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
 let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 let g:CommandTMaxHeight=20
+
+"Commenting
+let s:comment_map = {
+    \   "c": '// ',
+    \   "cpp": '// ',
+    \   "go": '// ',
+    \   "java": '// ',
+    \   "javascript": '// ',
+    \   "php": '// ',
+    \   "python": '# ',
+    \   "ruby": '# ',
+    \   "vim": '" ',
+    \ }
+
+function! ToggleComment()
+    if has_key(s:comment_map, &filetype)
+        let comment_leader = s:comment_map[&filetype]
+        if getline('.') =~ "^" . comment_leader
+            " Uncomment the line
+            execute "silent s/^" . comment_leader . "//"
+        else
+            " Comment the line
+            execute "silent s/^/" . comment_leader . "/"
+        endif
+    else
+        echo "No comment leader found for filetype"
+    end
+endfunction
+
+nnoremap <leader>/ :call ToggleComment()<cr>
+vnoremap <leader>/ :call ToggleComment()<cr>
