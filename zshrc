@@ -32,7 +32,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 #if [ "$TMUX" = "" ]; then tmux; fi
 
-export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
@@ -46,10 +45,11 @@ alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
 
 alias ga='git add'
-alias gc='git commit .'
+alias gc='git commit -m'
 alias gp='git push'
 alias gu='git pull'
 alias gs='git status'
+alias gl='git log'
 alias q='exit'
 
 alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
