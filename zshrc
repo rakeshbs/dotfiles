@@ -36,7 +36,8 @@ export VISUAL=vim
 export EDITOR=vim
 
 alias tmux='tmux -u'
-alias v='vim'
+#alias vim='mvim -v'
+alias v='mvim -v'
 alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
 alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
 
