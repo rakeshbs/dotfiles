@@ -10,6 +10,8 @@ set hidden  " For LustyExplorer
 set shiftwidth=4
 set tabstop=4
 set expandtab
+set cursorline
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,6 +20,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/syntastic'
 Plugin 'https://github.com/bling/vim-airline'
@@ -36,6 +39,8 @@ Plugin 'vim-scripts/YankRing.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+color Tomorrow-Night
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -59,7 +64,7 @@ let g:haddock_browser = "open"
 let g:ghc = "/usr/local/bin/ghc"
 
 "Airline
-set t_Co=8
+"set t_Co=8
 set laststatus=2
 let g:airline_theme = 'bubblegum'
 let g:airline_left_sep = ''
