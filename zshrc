@@ -35,6 +35,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export VISUAL=vim
 export EDITOR=vim
 
+alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
 alias tmux='tmux -u'
 #alias vim='mvim -v'
 alias v='mvim -v'
