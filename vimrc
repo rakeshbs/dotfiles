@@ -15,12 +15,12 @@ set cursorline
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/syntastic'
 Plugin 'https://github.com/bling/vim-airline'
@@ -35,14 +35,13 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/YankRing.vim'
-Plugin 'jaxbot/semantic-highlight.vim'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-color Tomorrow-Night
+colorscheme Tomorrow-Night
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -209,3 +208,5 @@ endfunction
 
 nnoremap <leader>/ :call ToggleComment()<cr>
 vnoremap <leader>/ :call ToggleComment()<cr>
+
+highlight Normal ctermbg=234
