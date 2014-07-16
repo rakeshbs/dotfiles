@@ -35,6 +35,8 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'jaxbot/semantic-highlight.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
