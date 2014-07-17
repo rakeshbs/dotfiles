@@ -60,6 +60,7 @@ alias ta='tmux attach-session -t'
 alias tl='tmux list-session'
 alias dd='cd ~/Desktop'
 alias df='cd ~/dotfiles'
+alias :q='exit'
 
 source ~/.fzf.zsh
 
