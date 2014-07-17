@@ -39,6 +39,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tpope/vim-rvm'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 
 
 " All of your Plugins must be added before the following line
@@ -228,3 +230,13 @@ nnoremap <leader>/ :call ToggleComment()<cr>
 vnoremap <leader>/ :call ToggleComment()<cr>
 
 highlight Normal ctermbg=234
+
+"EasyTags
+let g:easytags_file = '~/.vimtags'
+let g:easytags_async = 1
+let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_dynamic_files = 2
+
+
+"Syntastic Colours
+let g:syntastic_enable_highlighting = 0
