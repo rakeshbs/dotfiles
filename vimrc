@@ -7,8 +7,8 @@ set incsearch
 set rnu
 set nu
 set hidden  " For LustyExplorer
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set cursorline
 
@@ -35,6 +35,10 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-endwise'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'tpope/vim-rvm'
 
 
 " All of your Plugins must be added before the following line
@@ -63,6 +67,20 @@ au BufEnter *.hs compiler ghc
 
 let g:haddock_browser = "open"
 let g:ghc = "/usr/local/bin/ghc"
+
+set nocompatible
+
+if has("syntax")
+  syntax on
+endif
+
+if has("autocmd")
+ filetype plugin indent on
+endif
+
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+
 
 "Airline
 "set t_Co=8
