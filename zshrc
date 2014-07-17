@@ -32,6 +32,8 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 #if [ "$TMUX" = "" ]; then tmux; fi
 
+source ~/.rvm/scripts/rvm
+
 export VISUAL=vim
 export EDITOR=vim
 
@@ -96,3 +98,5 @@ fh() {
 fkill() {
   ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
