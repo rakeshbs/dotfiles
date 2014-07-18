@@ -41,6 +41,8 @@ Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tpope/vim-rvm'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
+Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'vim-scripts/L9'
 
 
 " All of your Plugins must be added before the following line
