@@ -1,17 +1,17 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set number
+"set number
 set timeout
 set timeoutlen=1000
 set incsearch
 set rnu
-set nu
 set hidden  " For LustyExplorer
 set shiftwidth=2
 set tabstop=2
 set expandtab
 set cursorline
-
+set background=dark
+syntax on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -49,8 +49,6 @@ Plugin 'vim-scripts/L9'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme Tomorrow-Night
-
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
@@ -87,7 +85,7 @@ let g:rubycomplete_classes_in_global = 1
 
 
 "Airline
-"set t_Co=8
+set t_Co=256
 set laststatus=2
 let g:airline_theme = 'bubblegum'
 let g:airline_left_sep = ''
@@ -166,6 +164,7 @@ augroup END
 
 autocmd InsertEnter * :set nu
 autocmd InsertEnter * :set nornu
+autocmd InsertLeave * :set nonu
 autocmd InsertLeave * :set rnu
 
 
@@ -242,3 +241,4 @@ let g:easytags_dynamic_files = 2
 
 "Syntastic Colours
 let g:syntastic_enable_highlighting = 0
+colorscheme Tomorrow-Night
