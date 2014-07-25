@@ -43,6 +43,7 @@ Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'vim-scripts/L9'
+Plugin 'jaxbot/semantic-highlight.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -145,6 +146,7 @@ nnoremap <Leader><Left> :bp<CR>
 nnoremap <Leader><Right> :bn<CR>
 nnoremap <Leader><Down> :bd<CR>
 nnoremap <Leader>y :YRShow<CR>
+nnoremap <Leader>= mzgg=G`z
 
 
 set pastetoggle=<f5>
@@ -192,6 +194,8 @@ let g:EasyGrepMode = 2
 
 "Automatic Paste Mode
 inoremap <C-v> <F5><C-r>+<F5>
+
+nnoremap <F8> :SemanticHighlightToggle<cr>
 
 "CommandT
 let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
