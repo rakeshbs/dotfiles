@@ -45,6 +45,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
