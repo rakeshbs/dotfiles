@@ -5,7 +5,7 @@ set timeout
 set timeoutlen=1000
 set incsearch
 set rnu
-set hidden  " For LustyExplorer
+" set hidden  " For LustyExplorer
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
