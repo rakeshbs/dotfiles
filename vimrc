@@ -153,6 +153,7 @@ nnoremap <Leader><Down> :bd<CR>
 nnoremap <Leader>y :YRShow<CR>
 nnoremap <Leader>= mzgg=G`z
 
+nnoremap <c-a> ggVG
 
 set pastetoggle=<f5>
 
@@ -163,6 +164,7 @@ nnoremap <f4> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endi
 " Remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
 
+" FastEscape from insert mode
 augroup FastEscape
       autocmd!
       au InsertEnter * set timeoutlen=0
