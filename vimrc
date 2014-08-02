@@ -162,6 +162,21 @@ nnoremap <c-a> ggVG
 
 set pastetoggle=<f5>
 
+" Automatic normal mode
+" set 'updatetime' to 15 seconds when in insert mode
+au InsertEnter * let updaterestore = &updatetime | set updatetime=5000
+au InsertLeave * let &updatetime = updaterestore
+"
+" " automatically leave insert mode after 'updatetime' milliseconds of
+" inaction
+au CursorHoldI * stopinsert
+
+" Remember Last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+
 " Hightlight Search toggle
 let hlstate=0
 nnoremap <f4> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
@@ -193,7 +208,13 @@ highlight TabLine ctermfg=244 ctermbg=233
 highlight TabLineSel ctermfg=White ctermbg=233
 
 "Search and replace vim
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <Leader>s :call SearchAndReplace("<C-r><C-w>","")<Left><Left>
+
+function! SearchAndReplace(search_string,replace_string)
+  execute "normal! mz"
+  execute "silent %s/" . a:search_string . "/".a:replace_string."/g"
+  execute "normal! `z"
+endfunction
 
 " EasyGrep
 let g:EasyGrepFileAssociationsInExplorer = 1
@@ -266,6 +287,8 @@ let g:ycm_use_ultisnips_completer = 1
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_key_list_select_completion = ['<C-n>']
+" let g:ycm_key_list_previous_completion = ['<C-p>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
