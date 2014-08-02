@@ -141,6 +141,9 @@ let g:tagbar_type_objc = {
 " Keybindings
 let mapleader = " "
 
+nnoremap <C-J> mao<Esc>`a
+nnoremap <C-K> maO<Esc>`a
+
 nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>w :w<CR>
