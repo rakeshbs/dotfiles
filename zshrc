@@ -64,7 +64,8 @@ alias tl='tmux list-session'
 alias dd='cd ~/Desktop'
 alias df='cd ~/dotfiles'
 alias :q='exit'
-
+alias prj='cd ~/Projects'
+alias rbp='cd ~/Projects/Ruby'
 source ~/.fzf.zsh
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
