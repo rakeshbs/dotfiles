@@ -143,6 +143,8 @@ let mapleader = " "
 
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
+inoremap <C-J> <Esc>mao<Esc>`ai
+inoremap <C-K> <Esc>maO<Esc>`ai
 
 nnoremap <Leader>l :Lexplore<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
