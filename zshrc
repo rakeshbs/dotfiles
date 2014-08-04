@@ -66,6 +66,8 @@ alias df='cd ~/dotfiles'
 alias :q='exit'
 alias prj='cd ~/Projects'
 alias rbp='cd ~/Projects/Ruby'
+alias subs="subliminal -l en -q "
+
 source ~/.fzf.zsh
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
