@@ -64,8 +64,8 @@ alias tl='tmux list-session'
 alias dd='cd ~/Desktop'
 alias df='cd ~/dotfiles'
 alias :q='exit'
-alias prj='cd ~/Projects'
-alias rbp='cd ~/Projects/Ruby'
+alias pj='cd ~/Projects'
+alias rp='cd ~/Projects/Ruby'
 alias subs="subliminal -l en -q "
 
 source ~/.fzf.zsh
