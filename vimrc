@@ -141,6 +141,13 @@ let g:tagbar_type_objc = {
 " Keybindings
 let mapleader = " "
 
+inoremap <F10> <C-c>
+nnoremap <F10> <C-c>
+vnoremap <F10> <C-c>
+cnoremap <F10> <C-c>
+snoremap <F10> <C-c>
+onoremap <F10> <C-c>
+
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
 inoremap <C-J> <Esc>mao<Esc>`ai
