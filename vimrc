@@ -238,7 +238,7 @@ inoremap <C-v> <F5><C-r>+<F5>
 nnoremap <F8> :SemanticHighlightToggle<cr>
 
 "CommandT
-let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+let g:CommandTCancelMap     = ['<ESC>', '<C-c>', '<F10>']
 let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
 let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 let g:CommandTMaxHeight=20
