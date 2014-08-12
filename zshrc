@@ -44,6 +44,7 @@ alias v='mvim -v'
 alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
 alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
 alias vimcast='ruby ~/dotfiles/Scripts/vimcasts.rb'
+alias kt='killall tmux'
 
 alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
 
