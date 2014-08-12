@@ -67,7 +67,8 @@ alias df='cd ~/dotfiles'
 alias :q='exit'
 alias pj='cd ~/Projects'
 alias rp='cd ~/Projects/Ruby'
-alias subs="subliminal -l en -q "
+alias subs="subliminal -l en -v *.*"
+alias sub="subliminal -l en -v "
 
 source ~/.fzf.zsh
 
