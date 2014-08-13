@@ -71,6 +71,12 @@ alias subs="subliminal -l en -v *.*"
 alias sub="subliminal -l en -v "
 alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
 
+
+take () {
+  mkdir $1
+  cd $1
+}
+
 source ~/.fzf.zsh
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
