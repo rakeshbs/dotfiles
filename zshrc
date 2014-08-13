@@ -69,6 +69,7 @@ alias pj='cd ~/Projects'
 alias rp='cd ~/Projects/Ruby'
 alias subs="subliminal -l en -v *.*"
 alias sub="subliminal -l en -v "
+alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
 
 source ~/.fzf.zsh
 
