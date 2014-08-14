@@ -69,10 +69,12 @@ alias pj='cd ~/Projects'
 alias rp='cd ~/Projects/Ruby'
 alias subs="subliminal -l en -v *.*"
 alias sub="subliminal -l en -v "
-alias rename-video="filebot -rename"
-alias rename-videos='filebot -rename *.*"
+alias rename-video='filebot -rename'
+alias rename-videos='filebot -rename *.*'
 alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
-
+alias ss='source ~/.zshrc'
+alias tt='source ~/.tmux.conf'
+alias vv='v ~/.vimrc'
 
 mm () {
   mkdir -p $1
