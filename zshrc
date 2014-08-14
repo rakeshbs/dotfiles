@@ -46,7 +46,7 @@ alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
 alias vimcast='ruby ~/dotfiles/Scripts/vimcasts.rb'
 alias kt='killall tmux'
 
-alias ytd='ruby ~/dotfiles/Scripts/download-youtube.rb'
+alias ytd='youtube-dl'
 
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
 
