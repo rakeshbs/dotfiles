@@ -73,7 +73,7 @@ alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
 
 
 mm () {
-  mkdir $1
+  mkdir -p $1
   cd $1
 }
 
