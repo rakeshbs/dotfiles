@@ -72,7 +72,7 @@ alias sub="subliminal -l en -v "
 alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
 
 
-mc () {
+mm () {
   mkdir $1
   cd $1
 }
