@@ -46,7 +46,7 @@ alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
 alias vimcast='ruby ~/dotfiles/Scripts/vimcasts.rb'
 alias kt='killall tmux'
 
-alias ytd='youtube-dl'
+alias ytd='youtube-dl -o "%(title)s.%(ext)s"'
 
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
 
@@ -75,10 +75,16 @@ alias youtube-ren="rename -v 's/(.+)-(.*).mp4/\$1.mp4/'"
 alias ss='source ~/.zshrc'
 alias tt='source ~/.tmux.conf'
 alias vv='v ~/.vimrc'
+alias c='cat'
 
 mm () {
   mkdir -p $1
   cd $1
+}
+
+ya () {
+  echo 'youtube-dl -o "%(title)s.%(ext)s" '$1 >> links
+  chmod 755 links
 }
 
 source ~/.fzf.zsh
