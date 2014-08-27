@@ -124,7 +124,3 @@ fkill() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-if [ -z "$TMUX" ]; then
-  tmux attach
-  clear
-fi
