@@ -40,7 +40,6 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tpope/vim-rvm'
-Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'SirVer/ultisnips'
@@ -275,13 +274,6 @@ nnoremap <leader>/ :call ToggleComment()<cr>
 vnoremap <leader>/ :call ToggleComment()<cr>
 
 highlight Normal ctermbg=234
-
-"EasyTags
-:set tags=./tags;
-:let g:easytags_dynamic_files = 2
-let g:easytags_async = 1
-let g:easytags_cmd = '/usr/local/bin/ctags'
-
 
 "Syntastic Colours
 let g:syntastic_enable_highlighting = 0
