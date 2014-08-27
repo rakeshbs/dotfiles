@@ -281,6 +281,7 @@ colorscheme Tomorrow-Night
 
 "Youcompleteme
 let g:ycm_use_ultisnips_completer = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 "Ultisnips
 " make YCM compatible with UltiSnips (using supertab)
@@ -294,3 +295,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+highlight Pmenu ctermbg=235 ctermfg=247
+highlight PmenuSel ctermfg=247 ctermbg=235
