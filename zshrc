@@ -67,6 +67,7 @@ alias df='cd ~/dotfiles'
 alias :q='exit'
 alias pj='cd ~/Projects'
 alias rp='cd ~/Projects/Ruby'
+alias rum='cd ~/Projects/Ruby\ Motion'
 alias subs="subliminal -l en -v *.*"
 alias sub="subliminal -l en -v "
 alias rename-video='filebot -rename'
@@ -123,5 +124,7 @@ fkill() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-tmux attach
-clear
+if [ -z "$TMUX" ]; then
+  tmux attach
+  clear
+fi
