@@ -76,6 +76,8 @@ alias ss='source ~/.zshrc'
 alias tt='source ~/.tmux.conf'
 alias vv='v ~/.vimrc'
 alias c='cat'
+alias ad='source ~/dotfiles/Scripts/set_active_directory.sh'
+alias ads="ruby ~/dotfiles/Scripts/set_active_directory.rb s"
 
 mm () {
   mkdir -p $1
