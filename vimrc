@@ -275,6 +275,10 @@ vnoremap <leader>/ :call ToggleComment()<cr>
 
 highlight Normal ctermbg=234
 
+"Toggle ScrollOff
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+
 "Syntastic Colours
 let g:syntastic_enable_highlighting = 0
 colorscheme Tomorrow-Night
