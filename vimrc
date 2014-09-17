@@ -45,6 +45,7 @@ Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-easytags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,6 +81,7 @@ endif
 if has("autocmd")
  filetype plugin indent on
 endif
+
 
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
@@ -300,5 +302,20 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-highlight Pmenu ctermbg=235 ctermfg=247
+let is_inside_ruby_motion = matchstr(getcwd(),"\/RubyMotion\/")
+if empty(is_inside_ruby_motion)
+  let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+else
+  let g:UltiSnipsSnippetDirectories=["UltiSnips","rubymotion_snippets"]
+endif
+
+" Autocomplete Menu
 highlight PmenuSel ctermfg=247 ctermbg=235
+highlight Pmenu ctermbg=235 ctermfg=247
+
+"Easy Tags
+set tags=tags
+let g:easytags_cmd = '/usr/local/bin/ctags'
+let g:easytags_dynamic_files = 2
+
+
