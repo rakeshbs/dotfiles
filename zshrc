@@ -79,6 +79,11 @@ alias c='cat'
 alias ad='source ~/dotfiles/Scripts/set_active_directory.sh'
 alias ads="ruby ~/dotfiles/Scripts/set_active_directory.rb s"
 
+if [ -z "$TMUX" ]; then
+else
+  export HISTFILE=~/.histories/.zsh_history.${TMUX_PANE:1:${#TMUX_PANE}}
+fi
+
 mm () {
   mkdir -p $1
   cd $1
@@ -110,8 +115,8 @@ fo() {
 fd() {
   local dir
   dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+    -o -type d -print 2> /dev/null | fzf +m) &&
+    cd "$dir"
 }
 
 # fh - repeat history
