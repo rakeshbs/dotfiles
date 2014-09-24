@@ -29,7 +29,6 @@ Plugin 'https://github.com/scrooloose/syntastic'
 Plugin 'https://github.com/bling/vim-airline'
 Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'eagletmt/neco-ghc'
-Plugin 'https://github.com/Valloric/YouCompleteMe'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'toyamarinyon/vim-swift'
 Plugin 'vim-scripts/CmdlineComplete'
@@ -285,16 +284,16 @@ let g:syntastic_enable_highlighting = 0
 colorscheme Tomorrow-Night
 
 "Youcompleteme
-let g:ycm_use_ultisnips_completer = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_use_ultisnips_completer = 0
+" let g:ycm_collect_identifiers_from_tags_files = 1
 
 "Ultisnips
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " let g:ycm_key_list_select_completion = ['<C-n>']
 " let g:ycm_key_list_previous_completion = ['<C-p>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabDefaultCompletionType = 'context'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -313,8 +312,10 @@ highlight PmenuSel ctermfg=247 ctermbg=235
 highlight Pmenu ctermbg=235 ctermfg=247
 
 "Easy Tags
-set tags=tags
-let g:easytags_cmd = '/usr/local/bin/ctags'
-let g:easytags_dynamic_files = 2
-
-
+let is_inside_projects_folder = matchstr(getcwd(),"\/Projects\/")
+if empty(is_inside_projects_folder)
+else
+  set tags=tags
+  let g:easytags_cmd = '/usr/local/bin/ctags'
+  let g:easytags_dynamic_files = 2
+endif
