@@ -40,8 +40,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tpope/vim-rvm'
 Plugin 'xolox/vim-misc'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-easytags'
 
@@ -140,11 +138,11 @@ let g:tagbar_type_objc = {
 " Keybindings
 let mapleader = " "
 
-inoremap <F10> <Esc><Esc>
+inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
+snoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
 nnoremap <F10> <Esc><Esc>
 vnoremap <F10> <Esc><Esc>
 cnoremap <F10> <Esc><Esc>
-snoremap <F10> <Esc><Esc>
 onoremap <F10> <Esc><Esc>
 
 nnoremap <C-J> mao<Esc>`a
@@ -283,34 +281,27 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 let g:syntastic_enable_highlighting = 0
 colorscheme Tomorrow-Night
 
-"Youcompleteme
-" let g:ycm_use_ultisnips_completer = 0
-" let g:ycm_collect_identifiers_from_tags_files = 1
 
-"Ultisnips
-" make YCM compatible with UltiSnips (using supertab)
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:ycm_key_list_select_completion = ['<C-n>']
-" let g:ycm_key_list_previous_completion = ['<C-p>']
-let g:SuperTabDefaultCompletionType = 'context'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-let is_inside_ruby_motion = matchstr(getcwd(),"\/RubyMotion\/")
-if empty(is_inside_ruby_motion)
-  let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-else
-  let g:UltiSnipsSnippetDirectories=["UltiSnips","rubymotion_snippets"]
-endif
 
 " Autocomplete Menu
-highlight PmenuSel ctermfg=247 ctermbg=235
-highlight Pmenu ctermbg=235 ctermfg=247
+highlight PmenuSel ctermfg=247 ctermbg=234
+highlight Pmenu ctermbg=234 ctermfg=247
 
+"CursorLine Colors
+highlight CursorLine ctermbg=235
+
+"Visual Selection
+highlight Visual ctermbg=236
+
+let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
+if empty(is_inside_rubymotion_folder)
+  let g:SuperTabDefaultCompletionType = 'context'
+  let g:rubymotion_completion_enabled = 0
+else
+  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+  let g:rubymotion_completion_enabled = 1
+endif
+"
 "Easy Tags
 let is_inside_projects_folder = matchstr(getcwd(),"\/Projects\/")
 if empty(is_inside_projects_folder)
@@ -319,3 +310,12 @@ else
   let g:easytags_cmd = '/usr/local/bin/ctags'
   let g:easytags_dynamic_files = 2
 endif
+
+if executable('ripper-tags')
+  let g:easytags_languages = {'ruby': {'cmd': 'ripper-tags'}}
+endif
+
+set completeopt=longest,menuone,preview
+set splitbelow
+" let g:SuperTabClosePreviewOnPopupClose = 1
+
