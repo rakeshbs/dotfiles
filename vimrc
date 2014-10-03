@@ -140,9 +140,9 @@ let g:tagbar_type_objc = {
 let mapleader = " "
 
 inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-snoremap <F10> <Esc><Esc>
+snoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
 nnoremap <F10> <Esc><Esc>
-vnoremap <F10> <Esc><Esc>
+xnoremap <F10> <Esc><Esc>
 cnoremap <F10> <Esc><Esc>
 onoremap <F10> <Esc><Esc>
 
