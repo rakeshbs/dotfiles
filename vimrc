@@ -140,7 +140,7 @@ let g:tagbar_type_objc = {
 let mapleader = " "
 
 inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-snoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
+snoremap <F10> <Esc><Esc>
 nnoremap <F10> <Esc><Esc>
 vnoremap <F10> <Esc><Esc>
 cnoremap <F10> <Esc><Esc>
@@ -157,9 +157,10 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
 nnoremap <Leader>p :CommandT<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
-nnoremap <Leader><Left> :bp<CR>
-nnoremap <Leader><Right> :bn<CR>
-nnoremap <Leader><Down> :bd<CR>
+nnoremap <Leader><Left> <C-w><Left>
+nnoremap <Leader><Right> <C-w><Right>
+nnoremap <Leader><Up> <C-w><Up>
+nnoremap <Leader><Down> <C-w><Down>
 nnoremap <Leader>y :YRShow<CR>
 nnoremap <Leader>= mzgg=G`z
 
@@ -282,8 +283,6 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 let g:syntastic_enable_highlighting = 0
 colorscheme Tomorrow-Night
 
-
-
 " Autocomplete Menu
 highlight PmenuSel ctermfg=247 ctermbg=234
 highlight Pmenu ctermbg=234 ctermfg=247
@@ -294,13 +293,20 @@ highlight CursorLine ctermbg=235
 "Visual Selection
 highlight Visual ctermbg=236
 
+let g:SuperTabDefaultCompletionType = 'context'
+let g:rubymotion_completion_enabled = 0
+
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
-  let g:SuperTabDefaultCompletionType = 'context'
-  let g:rubymotion_completion_enabled = 0
 else
   let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
   let g:rubymotion_completion_enabled = 1
+endif
+
+let is_inside_ruby_folder = matchstr(getcwd(),"\/Ruby\/")
+if empty(is_inside_ruby_folder)
+else
+  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 endif
 "
 "Easy Tags
