@@ -141,7 +141,7 @@ let mapleader = " "
 
 inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
 snoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-nnoremap <F10> <Esc><Esc>
+nnoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
 xnoremap <F10> <Esc><Esc>
 cnoremap <F10> <Esc><Esc>
 onoremap <F10> <Esc><Esc>
