@@ -43,6 +43,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-endwise'
+Plugin 'Rip-Rip/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -326,3 +327,5 @@ set completeopt=longest,menuone,preview
 set splitbelow
 " let g:SuperTabClosePreviewOnPopupClose = 1
 
+" Clang complete
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
