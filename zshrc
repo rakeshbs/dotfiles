@@ -58,7 +58,6 @@ alias gs='git status'
 alias gl='git log'
 alias q='exit'
 
-alias swift='/Applications/Xcode6-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
 alias server='python -m SimpleHTTPServer 8000'
 alias ta='tmux attach-session -t'
 alias tl='tmux list-session'
