@@ -44,6 +44,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-endwise'
 Plugin 'Rip-Rip/clang_complete'
+Plugin 'lukerandall/haskellmode-vim'
+Plugin 'raichoo/haskell-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
