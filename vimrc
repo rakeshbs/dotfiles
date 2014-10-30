@@ -256,6 +256,7 @@ let s:comment_map = {
     \   "python": '# ',
     \   "ruby": '# ',
     \   "vim": '" ',
+    \   "haskell": '--',
     \ }
 
 function! ToggleComment()
