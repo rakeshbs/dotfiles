@@ -247,12 +247,12 @@ let g:CommandTMaxHeight=20
 
 "Commenting
 let s:comment_map = {
-    \   "c": '// ',
-    \   "cpp": '// ',
-    \   "go": '// ',
-    \   "java": '// ',
-    \   "javascript": '// ',
-    \   "php": '// ',
+    \   "c": '\/\/ ',
+    \   "cpp": '\/\/',
+    \   "go": '\/\/ ',
+    \   "java": '\/\/ ',
+    \   "javascript": '\/\/ ',
+    \   "php": '\/\/ ',
     \   "python": '# ',
     \   "ruby": '# ',
     \   "vim": '" ',
