@@ -46,6 +46,7 @@ alias hc='source ~/dotfiles/Scripts/createHaskell.sh'
 alias ho='sh ~/dotfiles/Scripts/HaskellVimTmux.sh'
 alias vimcast='ruby ~/dotfiles/Scripts/vimcasts.rb'
 alias kt='killall tmux'
+alias p='cmus-remote -u'
 
 alias ytd='youtube-dl -o "%(title)s.%(ext)s"'
 
@@ -81,10 +82,10 @@ alias ads="ruby ~/dotfiles/Scripts/set_active_directory.rb s"
 alias create_rubymotion_snippets="ruby ~/.RubyCompleteServer/create_snippets.rb"
 alias start_rubymotion_server="ruby ~/.RubyCompleteServer/ruby_complete_server.rb"
 
-if [ -z "$TMUX" ]; then
-else
-  export HISTFILE=~/.histories/.zsh_history.${TMUX_PANE:1:${#TMUX_PANE}}
-fi
+#if [ -z "$TMUX" ]; then
+#else
+  #export HISTFILE=~/.histories/.zsh_history.${TMUX_PANE:1:${#TMUX_PANE}}
+#fi
 
 mm () {
   mkdir -p $1
