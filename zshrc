@@ -38,6 +38,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
+alias pi="ssh pi@192.168.2.16"
 alias tmux='tmux -u'
 #alias vim='mvim -v'
 alias v='mvim -v'
@@ -131,4 +132,4 @@ fkill() {
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
+PATH=$PATH:/Volumes/arm-willtm-linux-gnueabi/bin/
