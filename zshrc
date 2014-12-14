@@ -48,7 +48,7 @@ alias vimcast='ruby ~/dotfiles/Scripts/vimcasts.rb'
 alias kt='killall tmux'
 alias p='cmus-remote -u'
 
-alias ytd='youtube-dl -o "%(title)s.%(ext)s"'
+alias ytd='youtube-dl -o "%(title)s.%(ext)s" --write-sub --write-auto-sub --sub-lang en'
 
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
 
@@ -93,7 +93,7 @@ mm () {
 }
 
 ya () {
-  echo 'youtube-dl -o "%(title)s.%(ext)s" '$1 >> links
+  echo 'youtube-dl -o "%(title)s.%(ext)s" --write-sub --write-auto-sub --sub-lang en '$1 >> links
   chmod 755 links
 }
 
