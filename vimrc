@@ -14,41 +14,34 @@ set cursorline
 set background=dark
 syntax on
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath+=~/.vim/bundle/ultisnips
+call plug#begin('~/.vim/plugged')
 
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+Plug 'ervandew/supertab'
+Plug 'https://github.com/scrooloose/syntastic'
+Plug 'https://github.com/bling/vim-airline'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'vim-scripts/CmdlineComplete'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'vim-scripts/EasyGrep'
+Plug 'wincent/Command-T', { 'do': 'ruby command-t/ruby/command-t/extconf.rb' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
+Plug 'vim-scripts/YankRing.vim'
+Plug 'Rip-Rip/clang_complete'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
+Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'raichoo/haskell-vim', { 'for': 'haskell' }
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ervandew/supertab'
-Plugin 'https://github.com/scrooloose/syntastic'
-Plugin 'https://github.com/bling/vim-airline'
-Plugin 'https://github.com/majutsushi/tagbar'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'toyamarinyon/vim-swift'
-Plugin 'vim-scripts/CmdlineComplete'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'vim-scripts/EasyGrep'
-Plugin 'wincent/Command-T'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'tpope/vim-rvm'
-Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-surround'
-Plugin 'xolox/vim-easytags'
-Plugin 'tpope/vim-endwise'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'lukerandall/haskellmode-vim'
-Plugin 'raichoo/haskell-vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
 filetype plugin indent on    " required
 
 let g:syntastic_check_on_open=1
@@ -58,33 +51,6 @@ let g:syntastic_enable_signs=1
 syntax on
 filetype plugin on
 
-" This assumes that ghc is in your path, if it is not, or you
-" wish to use a specific version of ghc, then please change
-" the ghc below to a full path to the correct one
-au BufEnter *.hs compiler ghc
-
-" For this section both of these should be set to your
-" browser and ghc of choice, I used the following
-" two vim lines to get those paths:
-" :r!which google-chrome
-" :r!which ghc
-
-let g:haddock_browser = "open"
-let g:ghc = "/usr/local/bin/ghc"
-
-set nocompatible
-
-if has("syntax")
-  syntax on
-endif
-
-if has("autocmd")
- filetype plugin indent on
-endif
-
-
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
 
 command W execute ":w"
 command Q execute ":q"
@@ -99,45 +65,6 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-
-" Tagbar settings
-" let g:tagbar_autofocus=1
-" let g:tagbar_autoclose=1
-" add a definition for Objective-C to tagbar
-let g:tagbar_type_objc = {
-    \ 'ctagstype' : 'ObjectiveC',
-    \ 'kinds'     : [
-        \ 'i:interface',
-        \ 'I:implementation',
-        \ 'p:Protocol',
-        \ 'm:Object_method',
-        \ 'c:Class_method',
-        \ 'v:Global_variable',
-        \ 'F:Object field',
-        \ 'f:function',
-        \ 'p:property',
-        \ 't:type_alias',
-        \ 's:type_structure',
-        \ 'e:enumeration',
-        \ 'M:preprocessor_macro',
-    \ ],
-    \ 'sro'        : ' ',
-    \ 'kind2scope' : {
-        \ 'i' : 'interface',
-        \ 'I' : 'implementation',
-        \ 'p' : 'Protocol',
-        \ 's' : 'type_structure',
-        \ 'e' : 'enumeration'
-    \ },
-    \ 'scope2kind' : {
-        \ 'interface'      : 'i',
-        \ 'implementation' : 'I',
-        \ 'Protocol'       : 'p',
-        \ 'type_structure' : 's',
-        \ 'enumeration'    : 'e'
-    \ }
-\ }
-
 
 " Keybindings
 let mapleader = " "
@@ -336,3 +263,12 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
+
+" Haskell Settings
+let g:haddock_browser = "open"
+let g:ghc = "/usr/local/bin/ghc"
+let g:hadock_indexfiledir="~/.vim/"
+autocmd Filetype haskell :call SetCompletionToUserCompletion()
+function! SetCompletionToUserCompletion()
+  let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
+endfunction
