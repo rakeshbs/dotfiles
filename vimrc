@@ -17,9 +17,11 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'ervandew/supertab'
-Plug 'https://github.com/scrooloose/syntastic'
-Plug 'https://github.com/bling/vim-airline'
-Plug 'https://github.com/majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -81,7 +83,7 @@ nnoremap <C-K> maO<Esc>`a
 inoremap <C-J> <Esc>mao<Esc>`ai
 inoremap <C-K> <Esc>maO<Esc>`ai
 
-nnoremap <Leader>l :Lexplore<CR>
+nnoremap <Leader>l :NERDTreeToggle<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
@@ -172,37 +174,8 @@ let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
 let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 let g:CommandTMaxHeight=20
 
-"Commenting
-let s:comment_map = {
-    \   "c": '\/\/ ',
-    \   "cpp": '\/\/',
-    \   "go": '\/\/ ',
-    \   "java": '\/\/ ',
-    \   "javascript": '\/\/ ',
-    \   "php": '\/\/ ',
-    \   "python": '# ',
-    \   "ruby": '# ',
-    \   "vim": '" ',
-    \   "haskell": '--',
-    \ }
-
-function! ToggleComment()
-    if has_key(s:comment_map, &filetype)
-        let comment_leader = s:comment_map[&filetype]
-        if getline('.') =~ "^" . comment_leader
-            " Uncomment the line
-            execute "silent s/^" . comment_leader . "//"
-        else
-            " Comment the line
-            execute "silent s/^/" . comment_leader . "/"
-        endif
-    else
-        echo "No comment leader found for filetype"
-    end
-endfunction
-
-nnoremap <leader>/ :call ToggleComment()<cr>
-vnoremap <leader>/ :call ToggleComment()<cr>
+nnoremap <leader>/ :call NERDComment(0,"toggle")<cr>
+vnoremap <leader>/ :call NERDComment(0,"toggle")<cr>
 
 highlight Normal ctermbg=234
 
