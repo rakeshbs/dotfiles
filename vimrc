@@ -241,7 +241,7 @@ map <ScrollWheelDown> <C-E>
 let g:haddock_browser = "open"
 let g:ghc = "/usr/local/bin/ghc"
 let g:hadock_indexfiledir="~/.vim/"
-autocmd Filetype haskell :call SetCompletionToUserCompletion()
-function! SetCompletionToUserCompletion()
-  let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
+autocmd Filetype haskell :call SetCompletionToOmniCompletion()
+function! SetCompletionToOmniCompletion()
+  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 endfunction
