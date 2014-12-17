@@ -226,16 +226,12 @@ if executable('ripper-tags')
   let g:easytags_languages = {'ruby': {'cmd': 'ripper-tags'}}
 endif
 
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 set splitbelow
-" let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Clang complete
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
 
 " Haskell Settings
 let g:haddock_browser = "open"
