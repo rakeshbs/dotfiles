@@ -245,3 +245,12 @@ endfunction
 " Tagbar settings
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
+" Ruby XMPFilter Settings
+autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
