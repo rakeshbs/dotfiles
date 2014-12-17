@@ -245,3 +245,7 @@ autocmd Filetype haskell :call SetCompletionToOmniCompletion()
 function! SetCompletionToOmniCompletion()
   let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 endfunction
+
+" Tagbar settings
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
