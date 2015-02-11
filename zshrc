@@ -38,6 +38,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
+alias test_haskell="runhaskell -Wall $(ls *test.hs)"
 alias pi="ssh pi@192.168.2.16"
 alias tmux='tmux -u'
 #alias vim='mvim -v'
