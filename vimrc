@@ -16,7 +16,8 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ervandew/supertab'
+Plug 'othree/vim-autocomplpop'
+Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -203,14 +204,14 @@ let g:rubymotion_completion_enabled = 0
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
 else
-  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+  let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
   let g:rubymotion_completion_enabled = 1
 endif
 
 let is_inside_ruby_folder = matchstr(getcwd(),"\/Ruby\/")
 if empty(is_inside_ruby_folder)
 else
-  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+  let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
 endif
 "
 "Easy Tags
@@ -228,7 +229,6 @@ endif
 
 set completeopt=longest,menuone
 set splitbelow
-"let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Clang complete
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
@@ -237,10 +237,6 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 let g:haddock_browser = "open"
 let g:ghc = "/usr/local/bin/ghc"
 let g:hadock_indexfiledir="~/.vim/"
-autocmd Filetype haskell :call SetCompletionToOmniCompletion()
-function! SetCompletionToOmniCompletion()
-  let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-endfunction
 
 " Tagbar settings
 let g:tagbar_autofocus = 1
