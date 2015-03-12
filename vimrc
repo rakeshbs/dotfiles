@@ -16,7 +16,7 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'othree/vim-autocomplpop'
+Plug 'rakeshbs/vim-autocomplpop'
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -73,7 +73,7 @@ let g:airline_right_alt_sep = ''
 let mapleader = " "
 
 inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-snoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
+snoremap <F10> <Esc><Esc><Right>/<%[^>]*><CR>v//e<CR><C-g>
 nnoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
 xnoremap <F10> <Esc><Esc>
 cnoremap <F10> <Esc><Esc>
@@ -155,6 +155,29 @@ function! SearchAndReplace(search_string,replace_string)
   execute "normal! `z"
 endfunction
 
+"Conditional Tab
+
+inoremap <tab> <c-r>=ConditionalTab()<CR>
+snoremap <tab> <Esc><Esc><Right>/<%[^>]*><CR>v//e<CR><C-g>
+"inoremap <CR> A
+
+function! ConditionalTab()
+  if pumvisible()
+    return "\<Down>"
+  endif
+  let line = getline('.')
+  let substr = strpart(line, -1, col('.'))
+  let substr = matchstr(substr, "[^ \t]*$")
+  if (strlen(substr) == 0)
+    return "\<tab>"
+  endif
+  let [row,col] = searchpos("\<%[^>]*>")
+  if row == 0
+    return "\<Esc>A"
+  endif
+  return  "\<Esc>\<Esc>/\<%[^>]*>\<CR>v//e\<CR>\<C-g>"
+endfunction
+
 " EasyGrep
 let g:EasyGrepFileAssociationsInExplorer = 1
 let g:EasyGrepFileAssociations = $HOME+ '/.vim/EasyGrepFileAssociations'
@@ -198,11 +221,11 @@ highlight CursorLine ctermbg=235
 "Visual Selection
 highlight Visual ctermbg=236
 
-let g:SuperTabDefaultCompletionType = 'context'
 let g:rubymotion_completion_enabled = 0
 
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
+  let g:acp_behaviorKeywordCommand = "\<C-n>"
 else
   let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
   let g:rubymotion_completion_enabled = 1
@@ -210,6 +233,7 @@ endif
 
 let is_inside_ruby_folder = matchstr(getcwd(),"\/Ruby\/")
 if empty(is_inside_ruby_folder)
+  let g:acp_behaviorKeywordCommand = "\<C-n>"
 else
   let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
 endif
