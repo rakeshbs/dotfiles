@@ -17,6 +17,7 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'rakeshbs/vim-autocomplpop'
+Plug 'rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -34,7 +35,6 @@ Plug 'wincent/Command-T', { 'do': 'ruby command-t/ruby/command-t/extconf.rb' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 Plug 'vim-scripts/YankRing.vim'
 Plug 'Rip-Rip/clang_complete'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
