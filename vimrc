@@ -16,8 +16,8 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'rakeshbs/vim-autocomplpop'
-Plug 'rakeshbs/vim-ruby', { 'for' : 'ruby'}
+Plug 'https://github.com/rakeshbs/vim-autocomplpop'
+Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -72,12 +72,10 @@ let g:airline_right_alt_sep = ''
 " Keybindings
 let mapleader = " "
 
-inoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-snoremap <F10> <Esc><Esc><Right>/<%[^>]*><CR>v//e<CR><C-g>
-nnoremap <F10> <Esc><Esc>/<%[^>]*><CR>v//e<CR><C-g>
-xnoremap <F10> <Esc><Esc>
-cnoremap <F10> <Esc><Esc>
-onoremap <F10> <Esc><Esc>
+imap <F10> <tab>
+smap <F10> <tab>
+nmap <F10> <tab>
+xmap <F10> <tab>
 
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
@@ -225,24 +223,16 @@ let g:rubymotion_completion_enabled = 0
 
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
-  let g:acp_behaviorKeywordCommand = "\<C-n>"
 else
-  let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
   let g:rubymotion_completion_enabled = 1
 endif
 
-let is_inside_ruby_folder = matchstr(getcwd(),"\/Ruby\/")
-if empty(is_inside_ruby_folder)
-  let g:acp_behaviorKeywordCommand = "\<C-n>"
-else
-  let g:acp_behaviorKeywordCommand = "\<C-x>\<C-u>"
-endif
 "
 "Easy Tags
 let is_inside_projects_folder = matchstr(getcwd(),"\/Projects\/")
 if empty(is_inside_projects_folder)
 else
-  set tags=tags
+  set tags=tags;
   let g:easytags_cmd = '/usr/local/bin/ctags'
   let g:easytags_dynamic_files = 2
 endif
@@ -274,3 +264,8 @@ autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
 autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
+
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
+autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
