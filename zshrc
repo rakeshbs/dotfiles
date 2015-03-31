@@ -82,6 +82,7 @@ alias ad='source ~/dotfiles/Scripts/set_active_directory.sh'
 alias ads="ruby ~/dotfiles/Scripts/set_active_directory.rb s"
 alias create_rubymotion_snippets="ruby ~/.RubyCompleteServer/create_snippets.rb"
 alias start_rubymotion_server="ruby ~/.RubyCompleteServer/ruby_complete_server.rb"
+alias rf="rm -rf"
 
 #if [ -z "$TMUX" ]; then
 #else
