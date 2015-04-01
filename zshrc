@@ -38,8 +38,9 @@ export VISUAL=vim
 export EDITOR=vim
 
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
+alias coursera="~/Coursera/coursera/coursera-dl -u rakeshbs@gmail.com -p=branjtrucid"
 alias test_haskell="ls *_test.hs | xargs -I {} runhaskell -Wall {}"
-alias pi="ssh pi@192.168.2.16"
+alias pi="ssh pi@192.168.2.5"
 alias tmux='tmux -u'
 #alias vim='mvim -v'
 alias v='mvim -v'
