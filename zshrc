@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export GOPATH="$HOME/.golang/"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cabal/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -92,6 +93,11 @@ alias rf="rm -rf"
 mm () {
   mkdir -p $1
   cd $1
+}
+
+add_aria () {
+  echo 'aria2c '$1 >> links
+  chmod 755 links
 }
 
 ya () {
