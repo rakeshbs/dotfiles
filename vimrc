@@ -17,6 +17,7 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/rakeshbs/vim-autocomplpop'
+Plug 'https://github.com/fatih/vim-go', {'for' : 'go' }
 Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
