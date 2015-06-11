@@ -255,7 +255,7 @@ let g:hadock_indexfiledir="~/.vim/"
 
 " Tagbar settings
 let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
+"let g:tagbar_autoclose = 1
 
 " Ruby XMPFilter Settings
 autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
