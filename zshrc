@@ -38,7 +38,7 @@ source ~/.rvm/scripts/rvm
 export VISUAL=vim
 export EDITOR=vim
 
-alias wa="./Scripts/wa.sh"
+alias wa="~/dotfiles/Scripts/wa.sh"
 alias sweep="find . -name .DS_Store -type f -delete ; find -name .Trashes -type d -delete ; find . -type d | xargs dot_clean -m"
 alias test_haskell="ls *_test.hs | xargs -I {} runhaskell -Wall {}"
 alias pi="ssh pi@192.168.2.5"
