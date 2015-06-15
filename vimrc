@@ -41,6 +41,7 @@ Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'raichoo/haskell-vim', { 'for': 'haskell' }
+Plug 'sudar/vim-arduino-syntax', { 'for': 'arduino' }
 
 
 " All of your Plugins must be added before the following line
