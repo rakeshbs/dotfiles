@@ -85,6 +85,7 @@ alias ads="ruby ~/dotfiles/Scripts/set_active_directory.rb s"
 alias create_rubymotion_snippets="ruby ~/.RubyCompleteServer/create_snippets.rb"
 alias start_rubymotion_server="ruby ~/.RubyCompleteServer/ruby_complete_server.rb"
 alias rf="rm -rf"
+alias create_ardiuno_makefile='cp ~/dotfiles/Makefile-arduino.mk $PWD/Makefile'
 
 #if [ -z "$TMUX" ]; then
 #else
@@ -145,4 +146,10 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/Volumes/arm-willtm-linux-gnueabi/bin/
 export RUBYMOTION_ANDROID_SDK=~/android-rubymotion/sdk
 export RUBYMOTION_ANDROID_NDK=~/android-rubymotion/ndk
+
+export ARDUINO_DIR=/Applications/Arduino.app/Contents/Java
+export ARDMK_DIR=/usr/local/Cellar/arduino-mk/1.5
+export AVR_TOOLS_DIR=/Applications/Arduino.app/Contents/Java/hardware/tools/avr
+export AVRDUDE=/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
+export AVRDUDE_CONF=~/dotfiles/avrdude.conf
 
