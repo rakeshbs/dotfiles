@@ -135,7 +135,6 @@ autocmd InsertEnter * :set nornu
 " autocmd InsertLeave * :set nonu
 autocmd InsertLeave * :set rnu
 
-
 map <PageUp> <C-U>
 map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
@@ -176,6 +175,14 @@ function! ConditionalTab()
     return "\<Esc>A"
   endif
   return  "\<Esc>\<Esc>/\<%[^>]*>\<CR>v//e\<CR>\<C-g>"
+endfunction
+
+function! MoveToAutocompleteMarker()
+  let [row,col] = searchpos("\<%[^>]*>")
+  if row == 0
+    return
+  endif
+  call  feedkeys("\<Esc>\<Esc>/\<%[^>]*>\<CR>v//e\<CR>\<C-g>")
 endfunction
 
 " EasyGrep
@@ -227,6 +234,7 @@ let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
 else
   let g:rubymotion_completion_enabled = 1
+  autocmd CompleteDone * :call MoveToAutocompleteMarker()
 endif
 
 "
