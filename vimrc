@@ -230,6 +230,8 @@ highlight Visual ctermbg=236
 
 let g:rubymotion_completion_enabled = 0
 
+autocmd FileType ruby :autocmd CompleteDone * :call MoveToAutocompleteMarker()
+
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
 else
