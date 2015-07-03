@@ -16,7 +16,8 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/rakeshbs/vim-autocomplpop'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'jiangmiao/auto-pairs', {'for' : 'java' }
 Plug 'https://github.com/fatih/vim-go', {'for' : 'go' }
 Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'vim-scripts/L9'
@@ -35,7 +36,6 @@ Plug 'vim-scripts/EasyGrep'
 Plug 'wincent/Command-T', { 'do': 'ruby command-t/ruby/command-t/extconf.rb' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 Plug 'vim-scripts/YankRing.vim'
-Plug 'Rip-Rip/clang_complete'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
@@ -212,6 +212,7 @@ highlight Normal ctermbg=234
 
 "Toggle ScrollOff
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+let &scrolloff=999-&scrolloff
 
 
 "Syntastic Colours
@@ -230,13 +231,13 @@ highlight Visual ctermbg=236
 
 let g:rubymotion_completion_enabled = 0
 
-autocmd FileType ruby :autocmd CompleteDone * :call MoveToAutocompleteMarker()
+"autocmd FileType ruby :autocmd CompleteDone * :call MoveToAutocompleteMarker()
 
 let is_inside_rubymotion_folder = matchstr(getcwd(),"\/RubyMotion\/")
 if empty(is_inside_rubymotion_folder)
 else
   let g:rubymotion_completion_enabled = 1
-  autocmd CompleteDone * :call MoveToAutocompleteMarker()
+  "autocmd CompleteDone * :call MoveToAutocompleteMarker()
 endif
 
 "
@@ -297,6 +298,10 @@ autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 
+autocmd FileType java nmap <buffer> <leader>i :JavaImport<CR>
+autocmd FileType java nmap <buffer> <leader>o :JavaImpl<CR>
+autocmd FileType java nmap <buffer> <leader>r :Ant clean debug install<CR>
+
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
@@ -327,3 +332,6 @@ function! NERDTreeQuit()
 endfunction
 
 autocmd WinEnter * call NERDTreeQuit()
+
+let g:EclimCompletionMethod = 'omnifunc'
+set completeopt+=preview

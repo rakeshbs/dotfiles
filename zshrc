@@ -144,6 +144,8 @@ fkill() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/Volumes/arm-willtm-linux-gnueabi/bin/
+PATH=$PATH:$HOME/.rubymotion-android/sdk/tools
+PATH=$PATH:/Users/rakeshbs/.rubymotion-android/sdk/platform-tools
 export RUBYMOTION_ANDROID_SDK=~/.rubymotion-android/sdk
 export RUBYMOTION_ANDROID_NDK=~/.rubymotion-android/ndk
 

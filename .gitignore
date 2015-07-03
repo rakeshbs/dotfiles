@@ -3,3 +3,5 @@ tags
 vim/plugged/
 vim/autoload/
 vim/.netrwhist
+vim/eclim/
+vim/plugin/
