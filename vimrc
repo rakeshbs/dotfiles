@@ -300,7 +300,8 @@ autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 
 autocmd FileType java nmap <buffer> <leader>i :JavaImport<CR>
 autocmd FileType java nmap <buffer> <leader>o :JavaImpl<CR>
-autocmd FileType java nmap <buffer> <leader>r :Ant clean debug install<CR>
+autocmd FileType java nmap <buffer> <leader>r :Ant debug install<CR>
+autocmd FileType java nmap <buffer> <leader>c :Ant clean<CR>
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
