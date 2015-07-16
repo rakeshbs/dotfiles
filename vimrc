@@ -84,18 +84,26 @@ nnoremap <C-K> maO<Esc>`a
 inoremap <C-J> <Esc>mao<Esc>`ai
 inoremap <C-K> <Esc>maO<Esc>`ai
 
-nnoremap <Leader>l :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>vq :ccl<CR>
 nnoremap <Leader>p :CommandT<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
+
+nnoremap <Leader>y :YRShow<CR>
+nnoremap <Leader>= mzgg=G`z
+
+" Switch windows
 nnoremap <Leader><Left> <C-w><Left>
 nnoremap <Leader><Right> <C-w><Right>
 nnoremap <Leader><Up> <C-w><Up>
 nnoremap <Leader><Down> <C-w><Down>
-nnoremap <Leader>y :YRShow<CR>
-nnoremap <Leader>= mzgg=G`z
+
+nnoremap <Leader>h <C-w><Left>
+nnoremap <Leader>l <C-w><Right>
+nnoremap <Leader>k <C-w><Up>
+nnoremap <Leader>j <C-w><Down>
 
 nnoremap <c-a> ggVG
 
