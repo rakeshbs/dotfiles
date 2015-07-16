@@ -95,10 +95,10 @@ nnoremap <Leader>y :YRShow<CR>
 nnoremap <Leader>= mzgg=G`z
 
 " Switch windows
-nnoremap <Leader><Left> <C-w><Left>
-nnoremap <Leader><Right> <C-w><Right>
-nnoremap <Leader><Up> <C-w><Up>
-nnoremap <Leader><Down> <C-w><Down>
+"nnoremap <Leader><Left> <C-w><Left>
+"nnoremap <Leader><Right> <C-w><Right>
+"nnoremap <Leader><Up> <C-w><Up>
+"nnoremap <Leader><Down> <C-w><Down>
 
 nnoremap <Leader>h <C-w><Left>
 nnoremap <Leader>l <C-w><Right>
@@ -344,3 +344,12 @@ autocmd WinEnter * call NERDTreeQuit()
 
 let g:EclimCompletionMethod = 'omnifunc'
 set completeopt+=preview
+
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
