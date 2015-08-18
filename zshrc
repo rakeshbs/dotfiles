@@ -13,27 +13,6 @@ source $ZSH/oh-my-zsh.sh
 
 export GOPATH="$HOME/.golang/"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cabal/bin/"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-#if [ "$TMUX" = "" ]; then tmux; fi
-
-source ~/.rvm/scripts/rvm
 
 export VISUAL=vim
 export EDITOR=vim
@@ -155,3 +134,5 @@ export AVR_TOOLS_DIR=/Applications/Arduino.app/Contents/Java/hardware/tools/avr
 export AVRDUDE=/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
 export AVRDUDE_CONF=~/dotfiles/avrdude.conf
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
