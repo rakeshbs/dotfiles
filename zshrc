@@ -51,8 +51,8 @@ alias :q='exit'
 alias pj='cd ~/Projects'
 alias rp='cd ~/Projects/Ruby'
 alias rum='cd ~/Projects/RubyMotion'
-alias subs="subliminal -l en -v *.*"
-alias sub="subliminal -l en -v "
+alias subs="subliminal download -l en *.*"
+alias sub="subliminal download -l en"
 alias rename-video='filebot -rename'
 alias rename-videos='filebot -rename *.*'
 alias ss='source ~/.zshrc'
@@ -123,8 +123,8 @@ fkill() {
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/Volumes/arm-willtm-linux-gnueabi/bin/
-PATH=$PATH:$HOME/.rubymotion-android/sdk/tools
-PATH=$PATH:/Users/rakeshbs/.rubymotion-android/sdk/platform-tools
+PATH=$PATH:$HOME/.android-sdks/tools
+PATH=$PATH:/Users/rakeshbs/.android-sdks/platform-tools
 export RUBYMOTION_ANDROID_SDK=~/.rubymotion-android/sdk
 export RUBYMOTION_ANDROID_NDK=~/.rubymotion-android/ndk
 
