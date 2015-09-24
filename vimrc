@@ -341,6 +341,7 @@ function! NERDTreeQuit()
 endfunction
 
 autocmd WinEnter * call NERDTreeQuit()
+let NERDTreeQuitOnOpen=1
 
 let g:EclimCompletionMethod = 'omnifunc'
 set completeopt+=preview
