@@ -22,7 +22,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'jiangmiao/auto-pairs', {'for' : 'java' }
 Plug 'https://github.com/fatih/vim-go', {'for' : 'go' }
 Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
-Plug 'https://github.com/ternjs/tern_for_vim', { 'for' : 'javascript'}
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -36,7 +35,6 @@ Plug 'tpope/vim-endwise'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'vim-scripts/EasyGrep'
-Plug 'pangloss/vim-javascript'
 Plug 'wincent/Command-T', { 'do': 'ruby command-t/ruby/command-t/extconf.rb' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 Plug 'vim-scripts/YankRing.vim'
@@ -46,8 +44,6 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'raichoo/haskell-vim', { 'for': 'haskell' }
 Plug 'sudar/vim-arduino-syntax', { 'for': 'arduino' }
-Plug 'keith/swift.vim'
-Plug 'keith/sourcekittendaemon.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -314,8 +310,8 @@ autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 
 autocmd FileType java nmap <buffer> <leader>i :JavaImport<CR>
 autocmd FileType java nmap <buffer> <leader>o :JavaImpl<CR>
-autocmd FileType java nmap <buffer> <leader>r :!./buildsh<CR>
-autocmd FileType java nmap <buffer> <leader>c :!./gradlew clean<CR>
+autocmd FileType java nmap <buffer> <leader>r :Ant debug install<CR>
+autocmd FileType java nmap <buffer> <leader>c :Ant clean<CR>
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -361,6 +357,3 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 noremap <leader><leader> :only<CR>
-
-"Javascript
-let g:EclimJavascriptValidate = 0
