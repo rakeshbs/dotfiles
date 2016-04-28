@@ -33,7 +33,7 @@ alias p='cmus-remote -u'
 alias ytd='youtube-dl -o "%(title)s.%(ext)s" --write-sub --write-auto-sub --sub-lang en'
 
 alias elm='elm --make --set-runtime=./js/elm-runtime.js'
-alias geth_test='geth --rpc --rpcport 8100 --rpccorsdomain "*" --networkid=39318 --maxpeers=0 --datadir=/Users/rakeshbs/Projects/Ethereum/test_net --genesis /Users/rakeshbs/Projects/Ethereum/test_net/dev_genesis.json --etherbase 0 --mine --miner-threads "1" js /Users/rakeshbs/Projects/Ethereum/test_net/test_miner.js'
+alias geth_test='geth --rpc --rpcport 8100 --rpccorsdomain "*" --networkid=39318 --maxpeers=0 --datadir=/Users/rakeshbs/Projects/Ethereum/test_net --genesis /Users/rakeshbs/Projects/Ethereum/test_net/dev_genesis.json --etherbase 0 --mine --minerthreads "1" js /Users/rakeshbs/Projects/Ethereum/test_net/test_miner.js'
 alias geth_test_attach='geth --rpc --networkid=39318 --maxpeers=0 --datadir=/Users/rakeshbs/Projects/Ethereum/test_net attach'
 
 alias ga='git add'
