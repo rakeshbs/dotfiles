@@ -5,3 +5,8 @@ vim/autoload/
 vim/.netrwhist
 vim/eclim/
 vim/plugin/
+nvim/plugged/
+nvim/autoload/
+nvim/.netrwhist
+nvim/eclim/
+nvim/plugin/
