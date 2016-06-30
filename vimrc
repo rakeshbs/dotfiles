@@ -23,7 +23,7 @@ Plug 'jiangmiao/auto-pairs', {'for' : 'java' }
 Plug 'https://github.com/fatih/vim-go', {'for' : 'go' }
 Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'https://github.com/ternjs/tern_for_vim', { 'for' : 'javascript'}
-Plug 'https://github.com/ethereum/vim-solidity'
+Plug 'tomlion/vim-solidity'
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
