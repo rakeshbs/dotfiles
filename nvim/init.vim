@@ -18,10 +18,6 @@ set dir=~/.swapfile/
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'jiangmiao/auto-pairs', {'for' : 'java' }
-Plug 'https://github.com/fatih/vim-go', {'for' : 'go' }
-Plug 'https://github.com/rakeshbs/vim-ruby', { 'for' : 'ruby'}
 Plug 'vim-scripts/L9'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -39,11 +35,6 @@ Plug 'wincent/Command-T', { 'do': 'ruby command-t/ruby/command-t/extconf.rb' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 Plug 'vim-scripts/YankRing.vim'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
-Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'raichoo/haskell-vim', { 'for': 'haskell' }
-Plug 'sudar/vim-arduino-syntax', { 'for': 'arduino' }
 
 
 " All of your Plugins must be added before the following line
